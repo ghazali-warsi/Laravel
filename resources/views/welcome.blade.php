@@ -8,3 +8,4 @@
 <a href="{{route('about' , '2')}}" class="btn btn-info">About</a>
 <a href="{{route('contact')}}" class="btn btn-info">Contact</a>
 <a href="{{route('service')}}" class="btn btn-info">Service</a>
+<a href="{{route('index.page')}}" class="btn btn-info">Employee</a>

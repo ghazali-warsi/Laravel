@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EmployeeController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
 // Route::get('URL' , function);\
-Route::get('/home' , function(){
+Route::get('/' , function(){
     return view('welcome');
 })->name('home');
 
@@ -50,6 +50,7 @@ Route::fallback(function()
 }
 );
 
+Route::view('/read' , 'Product.read');
 
 // route::prefix('/home')->group(function ()
 // {
@@ -73,3 +74,22 @@ Route::fallback(function()
 
 // run a command 
 // php artisan db:seed 
+
+
+
+
+// Factory 
+// Steps to work with Factory 
+// Create model File 
+// create Factory file 
+// add model file in seeder file 
+// seeder/databaseseeder 
+
+
+// run a command 
+// php artisan db:seed 
+
+
+Route::get('/empform' , [EmployeeController::class, 'create'])->name('create.page');
+Route::get('/empindex' , [EmployeeController::class , 'index'])->name('index.page');
+Route::post('/empstore' , [EmployeeController::class , 'store'])->name('store.emp');
