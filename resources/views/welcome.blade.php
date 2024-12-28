@@ -9,3 +9,4 @@
 <a href="{{route('contact')}}" class="btn btn-info">Contact</a>
 <a href="{{route('service')}}" class="btn btn-info">Service</a>
 <a href="{{route('index.page')}}" class="btn btn-info">Employee</a>
+<a href="{{route('user.form')}}" class="btn btn-info">Sign Up</a>

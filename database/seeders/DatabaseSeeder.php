@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Employee::Factory()->count(150)->create();
+        // Employee::Factory()->count(150)->create();
 
-            $this->call([
-            ContactSeeder::class
-            ]);
+        //     $this->call([
+        //     ContactSeeder::class
+        //     ]);
 
     }
 }

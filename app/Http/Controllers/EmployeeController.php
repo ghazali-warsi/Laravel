@@ -48,6 +48,41 @@ class EmployeeController extends Controller
     } 
 
     // edit method for redirect to updata data of employee form
+    public function edit(string $id)
+    { 
+         $emp = DB::table('employees')->find($id);
+        // $emp = DB::table('employees')->where('id', '2')->get();
+         return view('Employee.update' , compact('emp'));
+
+    }
+
     // update method to update data which in employee table 
+    public function update(Request $req ,  string $id)
+    {
+        // $emp = DB::table('employees')->where('id' , '2')->get();
+        
+        DB::table('employees')->where('id' , $id)->update([
+            'name'=>$req->name,
+            'email'=>$req->email,
+            'address'=>$req->address,
+            'age'=>$req->age
+        ]);
+
+        return redirect()->route('index.page');
+    }
+
     // destroy method for delete the specific of complete table data
+
+    public function destroy(string $id)
+    {
+            $emp = DB::table('employees')->where('id' , $id)->delete();
+            return redirect()->route('index.page');
+    }
+
+    public function show(string $id)
+    { 
+         $data = DB::table('employees')->find($id);
+        // $emp = DB::table('employees')->where('id', '2')->get();
+         return view('Employee.single' , compact('data'));
+    }
 }

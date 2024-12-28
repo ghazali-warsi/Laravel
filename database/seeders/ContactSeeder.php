@@ -64,18 +64,18 @@ class ContactSeeder extends Seeder
     //  });
 
 
-    for ($x=1;$x<100;$x++)
-    {
-        Contact::create(
-            [
-                'name'=>fake()->name(),
-                'email'=>fake()->safeEmail(),
-                'address'=>fake()->streetAddress(),
-                'age'=>fake()->numberBetween(18,45),
-                'created_at'=>fake()->dateTime(),
-                'updated_at'=>fake()->dateTime(),
-            ]
-        );
-    }
+    // for ($x=1;$x<100;$x++)
+    // {
+    //     Contact::create(
+    //         [
+    //             'name'=>fake()->name(),
+    //             'email'=>fake()->safeEmail(),
+    //             'address'=>fake()->streetAddress(),
+    //             'age'=>fake()->numberBetween(18,45),
+    //             'created_at'=>fake()->dateTime(),
+    //             'updated_at'=>fake()->dateTime(),
+    //         ]
+    //     );
+    // }
     }
 }

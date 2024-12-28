@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id(); // autoincrement / primary key / column id / type define
             $table->string('Name' , 100);
             $table->string('Email' , 100)->unique()->nullable();
-            $table->integer('Age');
-            $table->string('address' , 100);
+            $table->string('role')->default('user');
+            $table->string('password');
             $table->timestamps();  // timetamps create two column created_at , updated_at 
         });
 

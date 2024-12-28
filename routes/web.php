@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmployeeController;
 // Route::get('/', function () {
 //     return view('welcome');
@@ -89,7 +90,21 @@ Route::view('/read' , 'Product.read');
 // run a command 
 // php artisan db:seed 
 
+Route::controller(EmployeeController::class)->group(function()
+{
+    Route::get('/empform' , 'create')->name('create.page');
+    Route::get('/empindex' ,  'index')->name('index.page');
+    Route::post('/empstore' ,  'store')->name('store.emp');
+    Route::get('/single/{id}' ,  'edit' )->name('emp.edit');
+    Route::post('/update/{id}',  'update')->name('emp.update');
+    Route::post('/delete/{id}' ,  'destroy')->name('emp.delete');
+    Route::get('/show/{id}' ,  'show')->name('single.page');
+});
 
-Route::get('/empform' , [EmployeeController::class, 'create'])->name('create.page');
-Route::get('/empindex' , [EmployeeController::class , 'index'])->name('index.page');
-Route::post('/empstore' , [EmployeeController::class , 'store'])->name('store.emp');
+
+Route::get('/signup' , [UserController::class , 'signup'])->name('user.form');
+Route::post('/register' , [UserController::class , 'register'])->name('user.store');
+Route::get('/loginform' , [UserController::class , 'loginform'])->name('user.login');
+Route::post('/login' , [UserController::class , 'login'])->name('user.check');
+Route::post('/logout' , [UserController::class , 'logout'])->name('user.out');
+Route::get('/web' , [UserController::class , 'website'])->name('website');

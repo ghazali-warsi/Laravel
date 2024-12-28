@@ -9,21 +9,10 @@
 </head>
 <body>
     <div class="container mt-3">
-    <a class="btn btn-primary" href="{{route('create.page')}}" >Add Employee</a>
+        
     <div class="row mt-2">
         <div class="col-12">
-            <table class="table table-bordered table-success table-striped ">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Age</th>
-                    <th>Action</th>
-                    <th>Action</th>
-                    <th>Action</th>
-                </tr>
-                @foreach ($emp as $data)
+            
 
                 <tr>
                     <td>{{$data->id}}</td>
@@ -31,15 +20,15 @@
                     <td>{{$data->email}}</td>
                     <td>{{$data->address}}</td>
                     <td>{{$data->age}}</td>
-                    <td><a class="btn btn-warning" href="{{route('single.page' , $data->id)}}">View</a></td>
+            
                     <td> <a class="btn btn-warning" href="{{route('emp.edit',$data->id)}}">Update</button></td>
                     <td>
                         <form action="{{route('emp.delete',$data->id)}}" method="post">
- @csrf
+                        @csrf
                             <button class="btn btn-danger" type="submit">Delete</button></td>
                         </form>
                 </tr>
-                @endforeach
+              
             </table>
         </div>
     </div>
